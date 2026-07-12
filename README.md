@@ -1,6 +1,24 @@
 # GlassBox — Public Case Study
 
-GlassBox is an independent iPhone productivity and self-care application. This repository documents the product and its development approach without publishing the private application source code.
+GlassBox is an independent iPhone productivity and self-care application. This repository is its public product and development case study.
+
+It gives an iOS hiring manager a concrete view of the product, technical scope, and validation work while the active application repository remains private.
+
+## At a glance
+
+| Area | Detail |
+| --- | --- |
+| Platform | iPhone |
+| Language | Swift |
+| UI | SwiftUI |
+| Persistence | SwiftData |
+| Sync | private CloudKit |
+| Purchases | StoreKit 2 |
+| Health | HealthKit |
+| Authentication | Sign in with Apple |
+| Testing | TestFlight, manual, regression |
+| Status | Preparing for App Store release |
+| Source | Private |
 
 ## Product summary
 
@@ -25,6 +43,28 @@ The current experience is organized around five areas:
 - Hungarian and English interface support
 - Onboarding, persistence, restore, and reinstall considerations
 
+## What I owned
+
+As an independently developed project, I have been responsible for:
+
+- Product definition and feature scoping
+- SwiftUI implementation
+- Persistence and sync behavior
+- Onboarding and restore flows
+- Localization
+- TestFlight validation
+- Manual and regression testing
+- Release preparation
+- Workflow design and project documentation
+
+## Product decisions
+
+- Choosing a calm, non-punitive productivity model
+- Keeping task, habit, mood, journal, and reward flows connected but understandable
+- Treating restore and reinstall behavior as release-critical
+- Keeping the source private while documenting the product publicly
+- Using AI tools as assistance, with final decisions and validation kept human-led
+
 ## Technology stack
 
 Swift · SwiftUI · SwiftData · private CloudKit sync · StoreKit 2 · HealthKit · Sign in with Apple · Xcode · TestFlight
@@ -32,12 +72,6 @@ Swift · SwiftUI · SwiftData · private CloudKit sync · StoreKit 2 · HealthKi
 ## Current status
 
 GlassBox is currently in TestFlight and preparing for App Store release. The focus is on validation, restore and persistence reliability, and release readiness. No App Store publication is claimed here.
-
-## Development responsibilities
-
-GlassBox is independently designed and developed. The work includes product shaping, SwiftUI development, persistence and sync considerations, localization, issue scoping, manual testing, regression testing, TestFlight validation, and release preparation.
-
-AI tools assist with bounded tasks under human review; they do not replace product decisions, privacy review, or runtime acceptance.
 
 ## Testing approach
 
@@ -54,9 +88,21 @@ Testing combines TestFlight builds with manual functional checks, regression pas
 
 The public roadmap direction is intentionally high level: continue validation, improve release readiness, and evolve the iPhone experience after the baseline is reliable. Detailed planning and implementation remain private.
 
-## Screenshots and App Store link
+## Visual preview
 
-Sanitized public screenshots may be added in [`assets/`](assets/). No screenshots are published yet. An App Store link will be added after a public release.
+Screenshots will be added only after privacy review and UI stabilization. No images, mockups, or private assets are published yet.
+
+| Planned capture | Purpose |
+| --- | --- |
+| Self dashboard | Show the calm daily overview. |
+| Tasks | Show lightweight planning and completion. |
+| Habits | Show focused daily routines. |
+| Journal | Show the reflection area with safe example content. |
+| Reward / companion | Show the gentle progression layer. |
+| Onboarding | Show the first-run experience. |
+| HealthKit context | Include only when the displayed data is safe. |
+
+See the [screenshot publication plan](assets/SCREENSHOT_PLAN.md). An App Store link will be added after public release.
 
 ## Supporting documentation
 
@@ -65,7 +111,15 @@ Sanitized public screenshots may be added in [`assets/`](assets/). No screenshot
 - [Testing and validation](docs/testing-and-validation.md)
 - [Development lessons](docs/development-lessons.md)
 - [Privacy and source code](docs/privacy-and-source-code.md)
+- [Changelog](CHANGELOG.md)
 
-## Source-code boundary
+## Why the source is private
 
-The GlassBox application source repository is intentionally private. This is a portfolio case study, not an open-source distribution.
+GlassBox is an active independent product. Its private repository contains implementation, assets, product logic, and release work; this public documentation shows the work without exposing those materials. That boundary protects the project while still making its product and development approach understandable.
+
+## Related repositories
+
+- [Public developer profile](https://github.com/Charles-drZ/Charles-drZ)
+- [GlassBox development workflow](https://github.com/Charles-drZ/glassbox-development-workflow)
+- [Automation workflow case study](https://github.com/Charles-drZ/automation-workflow-showcase)
+- [Raspberry Home documentation case study](https://github.com/Charles-drZ/raspberry-home-showcase)
