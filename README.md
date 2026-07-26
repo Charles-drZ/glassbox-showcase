@@ -1,3 +1,5 @@
+[← Developer profile](https://github.com/Charles-drZ)
+
 # GlassBox — Private-Source iPhone Product Case Study
 
 GlassBox is an independently developed iPhone productivity and self-care product. This public repository explains the product, my ownership, the Apple-platform scope, and the validation discipline behind it while the application source and private implementation remain protected.
@@ -6,14 +8,12 @@ GlassBox is an independently developed iPhone productivity and self-care product
 
 ## At a glance
 
-| Area | Current scope |
-| --- | --- |
-| Role | Independent product developer |
-| Platform | iPhone |
-| Core technologies | Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple |
-| Quality work | Unit, manual, regression, TestFlight, restore, and physical-device validation |
-| Product stage | TestFlight and App Store readiness |
-| Application source | Private by design |
+**Role:** Independent product developer  
+**Platform:** iPhone  
+**Core technologies:** Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple  
+**Quality work:** Unit, manual, regression, TestFlight, restore, and physical-device validation  
+**Product stage:** TestFlight and App Store readiness  
+**Application source:** Private by design
 
 ## What this proves
 
