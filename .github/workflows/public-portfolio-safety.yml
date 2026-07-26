@@ -69,5 +69,11 @@ jobs:
             exit 1
           fi
 
-      - name: Confirm portfolio entry point
-        run: test -s README.md
+      - name: Confirm permanent source boundary
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test -s README.md
+          test -s docs/privacy-and-source-code.md
+          grep -Fq 'GlassBox source code is not shared publicly or privately as part of recruitment.' docs/privacy-and-source-code.md
+          grep -Fq 'No complete or partial source access is promised.' docs/privacy-and-source-code.md
