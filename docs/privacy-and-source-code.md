@@ -1,3 +1,5 @@
+[← GlassBox case study](../README.md)
+
 # Privacy and source code
 
 GlassBox is an active independent product. Its application source code and private implementation are intentionally kept outside this public portfolio.
@@ -31,3 +33,7 @@ Every screenshot must pass a separate review for personal data, health data, acc
 ## Licensing
 
 No open-source license or permission to reproduce the product implementation is implied by this public case study.
+
+---
+
+[← Return to GlassBox case study](../README.md)
