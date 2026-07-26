@@ -1,110 +1,117 @@
-# GlassBox — Public Case Study
+# GlassBox — Private-Source iPhone Product Case Study
 
-GlassBox is an independent iPhone productivity and self-care application. This repository is its public product and development case study.
+GlassBox is an independently developed iPhone productivity and self-care product. This public repository explains the product, my ownership, the Apple-platform scope, and the validation discipline behind it while the application source and private implementation remain protected.
 
-It gives an iOS hiring manager a concrete view of the product, technical scope, and validation work while the active application repository remains private.
+> **The purpose of this case study is to show that I can shape, build, validate, and prepare a real iOS product for release — not to publish a cleaned copy of its codebase.**
 
 ## At a glance
 
-| Area | Detail |
+| Area | Current scope |
 | --- | --- |
+| Role | Independent product developer |
 | Platform | iPhone |
-| Language | Swift |
-| UI | SwiftUI |
-| Persistence | SwiftData |
-| Sync | private CloudKit |
-| Purchases | StoreKit 2 |
-| Health | HealthKit |
-| Authentication | Sign in with Apple |
-| Testing | TestFlight, manual, regression |
-| Status | Preparing for App Store release |
-| Source | Private |
+| Core technologies | Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple |
+| Quality work | Unit, manual, regression, TestFlight, restore, and physical-device validation |
+| Product stage | TestFlight and App Store readiness |
+| Application source | Private by design |
 
-## Product summary
+## What this proves
 
-GlassBox is built around a simple idea: productivity should help people feel clear, not guilty. It combines everyday planning with reflection and a light self-care layer, helping people return to their routines after imperfect days.
+- I can take responsibility for an iPhone product beyond individual screens or isolated coding exercises.
+- I can connect product decisions, SwiftUI implementation, persistence, Apple-platform services, testing, and release preparation.
+- I treat persistence, synchronization, restore, and reinstall behavior as user-facing reliability work.
+- I use AI-assisted development inside explicit scope, evidence, privacy, and human-approval boundaries.
+- I can document engineering work publicly without exposing proprietary implementation or unreleased product material.
 
-The current experience is organized around five areas:
+## Product direction
 
-- **Self** — daily overview, mood, reflection, and personal context
-- **Tasks** — lightweight planning and completion flow
-- **Habits** — focused daily routines
-- **Journal** — notes, gratitude, and reflection
-- **Reward** — gentle progression, rewards, and a companion element
+GlassBox is built around a simple idea: productivity should help people regain clarity after imperfect days rather than make them feel guilty.
 
-## Product areas and capabilities
+The experience is organized around five connected areas:
 
-- Task planning and completion
-- Habit tracking and daily focus
-- Mood tracking and reflection
-- Journal and gratitude entries
-- HealthKit-based context
-- Rewards and companion progression
-- Hungarian and English interface support
-- Onboarding, persistence, restore, and reinstall considerations
+- **Self** — daily context, mood, and reflection;
+- **Tasks** — lightweight planning and completion;
+- **Habits** — focused daily routines;
+- **Journal** — notes, gratitude, and reflection;
+- **Reward** — gentle progression and a companion layer.
 
-## What I owned
+The product supports Hungarian and English interface use and combines planning with optional health-aware context.
 
-As an independently developed project, I have been responsible for:
+## My ownership
 
-- Product definition and feature scoping
-- SwiftUI implementation
-- Persistence and sync behavior
-- Onboarding and restore flows
-- Localization
-- TestFlight validation
-- Manual and regression testing
-- Release preparation
-- Workflow design and project documentation
+As the independent developer, I am responsible for:
 
-## Product decisions
+- product definition and feature shaping;
+- Swift and SwiftUI development;
+- persistence and synchronization behavior;
+- onboarding, restore, and reinstall considerations;
+- Apple-platform integrations;
+- localization;
+- unit, manual, and regression testing;
+- TestFlight validation;
+- release-readiness review;
+- workflow design and durable project documentation.
 
-- Choosing a calm, non-punitive productivity model
-- Keeping task, habit, mood, journal, and reward flows connected but understandable
-- Treating restore and reinstall behavior as release-critical
-- Keeping the source private while documenting the product publicly
-- Using AI tools as assistance, with final decisions and validation kept human-led
+## Engineering scope
 
-## Technology stack
+The public technical description intentionally stays at platform level:
 
-Swift · SwiftUI · SwiftData · private CloudKit sync · StoreKit 2 · HealthKit · Sign in with Apple · Xcode · TestFlight
+- **SwiftUI** for the state-driven iPhone experience;
+- **SwiftData** for local persistence;
+- **private CloudKit synchronization** for user-owned data;
+- **StoreKit 2** for purchases and subscription foundations;
+- **HealthKit** for optional activity-aware context;
+- **Sign in with Apple** for account access;
+- **XCTest, Xcode, and TestFlight** for validation and release preparation.
 
-## Current status
+Implementation architecture, identifiers, schemas, product logic, internal tooling, and source code remain private.
 
-GlassBox is currently in TestFlight and preparing for App Store release. The focus is on validation, restore and persistence reliability, and release readiness. No App Store publication is claimed here.
+## Validation approach
 
-## Testing approach
+GlassBox is validated through a combination of:
 
-Testing combines TestFlight builds with manual functional checks, regression passes, issue reproduction, persistence and restore checks, and runtime validation appropriate to the change. A successful build is treated as useful evidence, not as proof of all runtime behavior.
+- focused unit and contract-style tests where appropriate;
+- physical iPhone builds and targeted runtime checks;
+- TestFlight sessions;
+- manual functional and regression passes;
+- issue reproduction and correction verification;
+- persistence, restore, relaunch, and reinstall checks;
+- release-build and release-readiness review.
 
-## Selected technical challenges
+A successful compile is treated as one piece of evidence, not proof that every user-facing path works correctly.
 
-- Maintaining understandable app state across onboarding, local persistence, sync, restore, and reinstall paths
-- Treating CloudKit synchronization and restore behavior as runtime-sensitive work
-- Making reward and progression flows safe to re-check during regression testing
-- Balancing a calm product experience with clear, testable behavior
+## Current state
 
-## Roadmap direction
+GlassBox is in TestFlight and is being prepared for App Store release. Current work focuses on reliability, regression coverage, restore and persistence behavior, product polish, and release readiness. No App Store publication is claimed until the product is publicly available.
 
-The public roadmap direction is intentionally high level: continue validation, improve release readiness, and evolve the iPhone experience after the baseline is reliable. Detailed planning and implementation remain private.
+## Visual evidence
 
-## Visual preview
+The case study is designed to accept visual evidence incrementally without restructuring the repository.
 
-Screenshots will be added only after privacy review and UI stabilization. No images, mockups, or private assets are published yet.
+Future additions may include:
 
-| Planned capture | Purpose |
-| --- | --- |
-| Self dashboard | Show the calm daily overview. |
-| Tasks | Show lightweight planning and completion. |
-| Habits | Show focused daily routines. |
-| Journal | Show the reflection area with safe example content. |
-| Reward / companion | Show the gentle progression layer. |
-| Onboarding | Show the first-run experience. |
-| HealthKit context | Include only when the displayed data is safe. |
+- privacy-reviewed product screenshots;
+- App Store-approved marketing images;
+- safe TestFlight or physical-device evidence;
+- short product-flow previews using synthetic content.
 
-See the [screenshot publication plan](assets/SCREENSHOT_PLAN.md). An App Store link will be added after public release.
+Visuals are added only when the relevant UI is stable and explicitly approved for publication. Until then, the written case study is the public source of truth.
 
-## Supporting documentation
+See the [screenshot publication plan](assets/SCREENSHOT_PLAN.md).
+
+## Public boundary
+
+This repository does **not** contain:
+
+- GlassBox source code, diffs, patches, or code excerpts;
+- model, schema, class, function, file, or internal identifier details;
+- private CloudKit, signing, StoreKit, HealthKit, or account configuration;
+- internal tickets, prompts, debug tooling, fixtures, or raw test output;
+- unreleased assets, private roadmap detail, or real user data.
+
+The documents here are independently written public case studies, not redacted exports from the private application repository.
+
+## Explore the case study
 
 - [Product overview](docs/product-overview.md)
 - [Technical overview](docs/technical-overview.md)
@@ -113,13 +120,9 @@ See the [screenshot publication plan](assets/SCREENSHOT_PLAN.md). An App Store l
 - [Privacy and source code](docs/privacy-and-source-code.md)
 - [Changelog](CHANGELOG.md)
 
-## Why the source is private
+## Related work
 
-GlassBox is an active independent product. Its private repository contains implementation, assets, product logic, and release work; this public documentation shows the work without exposing those materials. That boundary protects the project while still making its product and development approach understandable.
-
-## Related repositories
-
-- [Public developer profile](https://github.com/Charles-drZ/Charles-drZ)
-- [GlassBox development workflow](https://github.com/Charles-drZ/glassbox-development-workflow)
+- [Developer profile](https://github.com/Charles-drZ/Charles-drZ)
+- [Development workflow case study](https://github.com/Charles-drZ/glassbox-development-workflow)
 - [Automation workflow case study](https://github.com/Charles-drZ/automation-workflow-showcase)
-- [Raspberry Home documentation case study](https://github.com/Charles-drZ/raspberry-home-showcase)
+- [Raspberry Home case study](https://github.com/Charles-drZ/raspberry-home-showcase)
