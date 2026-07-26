@@ -1,3 +1,5 @@
+[← GlassBox case study](../README.md)
+
 # Testing and validation
 
 ## Approach
@@ -23,3 +25,7 @@ Issues are tracked with scope, acceptance criteria, review state, and follow-up 
 ## Professional context
 
 This is independent product-testing experience, not a claim of prior formal QA employment. It demonstrates hands-on manual and regression validation practices developed while building and maintaining a personal iOS product.
+
+---
+
+[← Return to GlassBox case study](../README.md)
