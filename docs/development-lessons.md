@@ -1,3 +1,5 @@
+[← GlassBox case study](../README.md)
+
 # Development lessons
 
 ## Clear ownership reduces uncertainty
@@ -27,3 +29,7 @@ AI can accelerate research, documentation, implementation support, and structure
 ## Systems troubleshooting transfers well
 
 Experience with technical troubleshooting reinforces habits that matter in app development: establish the symptom, narrow the boundary, collect evidence, avoid assumptions, and record the outcome clearly.
+
+---
+
+[← Return to GlassBox case study](../README.md)
