@@ -1,3 +1,5 @@
+[← GlassBox case study](../README.md)
+
 # Product overview
 
 ## Who it is for
@@ -10,13 +12,11 @@ The guiding idea is **productivity without guilt**. Missed tasks or habits shoul
 
 ## Five connected areas
 
-| Area | Role in the experience |
-| --- | --- |
-| Self | A daily overview with mood, reflection, and personal context. |
-| Tasks | Lightweight task planning and completion. |
-| Habits | Focused routines that can be revisited daily. |
-| Journal | Notes, gratitude, mood entries, and reflection. |
-| Reward | Gentle progression and a companion layer that makes consistency feel more tangible. |
+**Self:** A daily overview with mood, reflection, and personal context.  
+**Tasks:** Lightweight task planning and completion.  
+**Habits:** Focused routines that can be revisited daily.  
+**Journal:** Notes, gratitude, mood entries, and reflection.  
+**Reward:** Gentle progression and a companion layer that makes consistency feel more tangible.
 
 ## Supporting product layers
 
@@ -25,3 +25,7 @@ GlassBox includes HealthKit-based context, onboarding, localization, and a rewar
 ## Current status
 
 The application is in TestFlight and preparing for App Store release. Product validation and release readiness are ongoing; no public release date is announced.
+
+---
+
+[← Return to GlassBox case study](../README.md)

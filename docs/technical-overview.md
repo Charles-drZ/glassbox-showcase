@@ -1,3 +1,5 @@
+[← GlassBox case study](../README.md)
+
 # Technical overview
 
 GlassBox is an iPhone application built with Swift and SwiftUI. The public description below stays intentionally high level so that the private source code, identifiers, and implementation details remain protected.
@@ -21,3 +23,7 @@ Rewards and companion progression are also designed with repeatable behavior in 
 ## Deliberately excluded
 
 This case study does not include code, model definitions, data schemas, class names, proprietary algorithms, bundle identifiers, CloudKit container identifiers, signing details, or internal architecture diagrams.
+
+---
+
+[← Return to GlassBox case study](../README.md)

@@ -1,3 +1,5 @@
+[← GlassBox case study](../README.md)
+
 # Screenshot publication plan
 
 Screenshots are not published yet. Add them only after privacy review and UI stabilization.
@@ -50,3 +52,7 @@ Screenshots are not published yet. Add them only after privacy review and UI sta
 - [ ] Device-frame and crop treatment are consistent with the other captures.
 - [ ] Image metadata has been reviewed.
 - [ ] The capture has received a final privacy review.
+
+---
+
+[← Return to GlassBox case study](../README.md)
