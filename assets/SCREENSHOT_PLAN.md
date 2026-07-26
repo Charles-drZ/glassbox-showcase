@@ -4,15 +4,26 @@ Screenshots are not published yet. Add them only after privacy review and UI sta
 
 ## Required captures
 
-| File name | Capture | Purpose |
-| --- | --- | --- |
-| `01-self-dashboard.png` | Self dashboard | Show the daily overview. |
-| `02-tasks.png` | Tasks | Show planning and completion. |
-| `03-habits.png` | Habits | Show a focused routine view. |
-| `04-journal.png` | Journal | Show the reflection area with non-personal sample content. |
-| `05-reward.png` | Reward / companion | Show the progression layer. |
-| `06-onboarding.png` | Onboarding | Show a safe first-run screen. |
-| Optional | HealthKit context | Use only if all displayed data is safe. |
+1. **`01-self-dashboard.png` — Self dashboard**  
+   Show the daily overview.
+
+2. **`02-tasks.png` — Tasks**  
+   Show planning and completion.
+
+3. **`03-habits.png` — Habits**  
+   Show a focused routine view.
+
+4. **`04-journal.png` — Journal**  
+   Show the reflection area with non-personal sample content.
+
+5. **`05-reward.png` — Reward / companion**  
+   Show the progression layer.
+
+6. **`06-onboarding.png` — Onboarding**  
+   Show a safe first-run screen.
+
+7. **Optional — HealthKit context**  
+   Use only if all displayed data is safe.
 
 ## Capture guidance
 
