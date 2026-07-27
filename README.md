@@ -99,6 +99,19 @@ Visuals are added only when the relevant UI is stable and explicitly approved fo
 
 See the [screenshot publication plan](assets/SCREENSHOT_PLAN.md).
 
+## Visual preview
+
+`assets/visuals/` is reserved for future, privacy-reviewed screenshots so visual evidence can be added without changing the case-study structure. No screenshots are included yet.
+
+Privacy boundary: every future image must use approved or synthetic content and must not expose user data, private configuration, unreleased material, or source and implementation details.
+
+Planned images:
+
+- [ ] `assets/visuals/glassbox-self-dashboard.png`
+- [ ] `assets/visuals/glassbox-tasks-or-habits.png`
+- [ ] `assets/visuals/glassbox-journal-synthetic.png`
+- [ ] `assets/visuals/glassbox-reward-companion.png`
+
 ## Public boundary
 
 This repository does **not** contain:
