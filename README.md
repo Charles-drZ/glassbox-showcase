@@ -84,33 +84,25 @@ A successful compile is treated as one piece of evidence, not proof that every u
 
 GlassBox is in TestFlight and is being prepared for App Store release. Current work focuses on reliability, regression coverage, restore and persistence behavior, product polish, and release readiness. No App Store publication is claimed until the product is publicly available.
 
-## Visual evidence
+## Product preview
 
-The case study is designed to accept visual evidence incrementally without restructuring the repository.
+These privacy-reviewed screenshots are real application captures from the current iPhone experience. Visible demonstration values are intentionally retained to show product behavior; no personal display name, journal text, account detail, internal identifier, debug overlay, or private configuration is included.
 
-Future additions may include:
+<p align="center">
+  <img src="assets/visuals/glassbox-self-energy-check-in.avif" alt="GlassBox guided energy check-in" width="210">
+  <img src="assets/visuals/glassbox-tasks-empty-state.avif" alt="GlassBox task empty state" width="210">
+  <img src="assets/visuals/glassbox-habits-daily-plan.avif" alt="GlassBox daily habit plan" width="210">
+  <img src="assets/visuals/glassbox-reward-companion.avif" alt="GlassBox reward companion and progression" width="210">
+</p>
 
-- privacy-reviewed product screenshots;
-- App Store-approved marketing images;
-- safe TestFlight or physical-device evidence;
-- short product-flow previews using synthetic content.
+- **Energy check-in** — A guided wellbeing input turns a subjective state into clear visual context for later trends.
+- **Tasks** — A calm task surface with clear hierarchy and an intentionally supportive empty state.
+- **Habits** — A day-based habit plan combines routines, progress, and lightweight completion tracking.
+- **Reward** — The companion and reward layer turns consistent self-care into visible progression without making productivity punitive.
 
-Visuals are added only when the relevant UI is stable and explicitly approved for publication. Until then, the written case study is the public source of truth.
+The screenshots demonstrate product design and user-facing behavior only. They do not expose GlassBox source, architecture, private configuration, or implementation details.
 
 See the [screenshot publication plan](assets/SCREENSHOT_PLAN.md).
-
-## Visual preview
-
-`assets/visuals/` is reserved for future, privacy-reviewed screenshots so visual evidence can be added without changing the case-study structure. No screenshots are included yet.
-
-Privacy boundary: every future image must use approved or synthetic content and must not expose user data, private configuration, unreleased material, or source and implementation details.
-
-Planned images:
-
-- [ ] `assets/visuals/glassbox-self-dashboard.png`
-- [ ] `assets/visuals/glassbox-tasks-or-habits.png`
-- [ ] `assets/visuals/glassbox-journal-synthetic.png`
-- [ ] `assets/visuals/glassbox-reward-companion.png`
 
 ## Public boundary
 

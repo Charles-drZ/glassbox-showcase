@@ -2,6 +2,12 @@
 
 # Changelog
 
+## 2026-07-27 — privacy-reviewed product preview
+
+- Published four metadata-clean iPhone screenshots covering energy check-in, tasks, habits, and the reward companion.
+- Added recruiter-facing captions that explain the product evidence without exposing source or implementation detail.
+- Updated the screenshot plan to record the published set and remaining optional captures.
+
 ## 2026-07-27 — visual placeholder preparation
 
 - Reserved `assets/visuals/` and documented the planned privacy-reviewed image set without adding screenshots.
