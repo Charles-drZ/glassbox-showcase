@@ -2,6 +2,10 @@
 
 # Changelog
 
+## 2026-07-27 — visual placeholder preparation
+
+- Reserved `assets/visuals/` and documented the planned privacy-reviewed image set without adding screenshots.
+
 ## 2026-07-26 — recruiter and publication hardening
 
 - Reframed the repository as a private-source iPhone product case study focused on ownership, Apple-platform scope, validation, and App Store readiness.
