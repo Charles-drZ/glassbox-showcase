@@ -2,6 +2,11 @@
 
 # Changelog
 
+## 2026-07-27 — interface language clarification
+
+- Clarified that Hungarian is the original GlassBox interface language and that the published screenshots intentionally show the native Hungarian product experience.
+- Kept the public case study in English for international accessibility while noting English localization support.
+
 ## 2026-07-27 — privacy-reviewed product preview
 
 - Published four metadata-clean iPhone screenshots covering energy check-in, tasks, habits, and the reward companion.
