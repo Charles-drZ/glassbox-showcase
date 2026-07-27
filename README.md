@@ -10,6 +10,7 @@ GlassBox is an independently developed iPhone productivity and self-care product
 
 **Role:** Independent product developer  
 **Platform:** iPhone  
+**Original interface language:** Hungarian; English localization is also supported  
 **Core technologies:** Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple  
 **Quality work:** Unit, manual, regression, TestFlight, restore, and physical-device validation  
 **Product stage:** TestFlight and App Store readiness  
@@ -85,6 +86,8 @@ A successful compile is treated as one piece of evidence, not proof that every u
 GlassBox is in TestFlight and is being prepared for App Store release. Current work focuses on reliability, regression coverage, restore and persistence behavior, product polish, and release readiness. No App Store publication is claimed until the product is publicly available.
 
 ## Product preview
+
+> **Language note:** GlassBox was originally designed in Hungarian, so the screenshots intentionally show its native Hungarian interface. This public case study is written in English for international accessibility; the product also supports English localization.
 
 These privacy-reviewed screenshots are real application captures from the current iPhone experience. Visible demonstration values are intentionally retained to show product behavior; no personal display name, journal text, account detail, internal identifier, debug overlay, or private configuration is included.
 
