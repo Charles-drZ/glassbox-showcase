@@ -1,95 +1,78 @@
 [← Developer profile](https://github.com/Charles-drZ)
 
-# GlassBox — Private-Source iPhone Product Case Study
+# GlassBox
 
-GlassBox is an independently developed iPhone productivity and self-care product. This public repository explains the product, my ownership, the Apple-platform scope, and the validation discipline behind it while the application source and private implementation remain protected.
+**An independent Apple-platform productivity and self-care product built around “Productivity without guilt.”**
 
-> **The purpose of this case study is to show that I can shape, build, validate, and prepare a real iOS product for release — not to publish a cleaned copy of its codebase.**
+GlassBox combines tasks, habits, mood tracking, journaling, health-aware context, rewards, and a companion layer into one calm daily system.
 
-## At a glance
+The product is also my primary long-running Apple-platform engineering project: I own product shaping, SwiftUI implementation, persistence and restore behavior, Apple integrations, validation, release preparation, and the engineering workflow around the app.
 
-**Role:** Independent product developer  
-**Platform:** iPhone  
-**Original interface language:** Hungarian; English localization is also supported  
+The application source remains private. This repository shows the product, engineering scope, validation discipline, and privacy-reviewed results without publishing proprietary implementation.
+
+## Product at a glance
+
+**Role:** Independent product developer / engineer  
+**Platforms:** iPhone; watchOS meditation prototype work in progress  
 **Core technologies:** Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple  
-**Quality work:** Unit, manual, regression, TestFlight, restore, and physical-device validation  
-**Product stage:** TestFlight and App Store readiness  
-**Application source:** Private by design
+**Validation:** XCTest, manual and regression testing, TestFlight, restore/reinstall checks, physical-device validation  
+**Product stage:** TestFlight hardening and App Store readiness  
+**Source:** Private by design
 
-## What this proves
+## What I own
 
-- I can take responsibility for an iPhone product beyond individual screens or isolated coding exercises.
-- I can connect product decisions, SwiftUI implementation, persistence, Apple-platform services, testing, and release preparation.
-- I treat persistence, synchronization, restore, and reinstall behavior as user-facing reliability work.
-- I use AI-assisted development inside explicit scope, evidence, privacy, and human-approval boundaries.
-- I can document engineering work publicly without exposing proprietary implementation or unreleased product material.
+GlassBox is not a collection of isolated SwiftUI screens. I am responsible for the product as a system, including:
 
-## Product direction
+- product definition and feature shaping;
+- Swift and SwiftUI implementation;
+- state and persistence behavior;
+- private CloudKit synchronization;
+- restore, relaunch, and reinstall paths;
+- StoreKit 2 purchase/subscription foundations;
+- HealthKit integration;
+- Sign in with Apple;
+- localization;
+- unit, manual, regression, and physical-device testing;
+- TestFlight validation and release-readiness review;
+- supporting automation, infrastructure, and durable engineering documentation.
 
-GlassBox is built around a simple idea: productivity should help people regain clarity after imperfect days rather than make them feel guilty.
+## Product experience
 
-The experience is organized around five connected areas:
+GlassBox is built around a simple idea: productivity should help users regain clarity after imperfect days instead of turning missed tasks into punishment.
 
-- **Self** — daily context, mood, and reflection;
+The iPhone experience is organized around five connected areas:
+
+- **Self** — daily context, mood, activity-aware information, and reflection;
 - **Tasks** — lightweight planning and completion;
 - **Habits** — focused daily routines;
 - **Journal** — notes, gratitude, and reflection;
-- **Reward** — gentle progression and a companion layer.
+- **Reward** — gentle progression and the Vidra companion layer.
 
-The product supports Hungarian and English interface use and combines planning with optional health-aware context.
+Hungarian is the original interface language and English localization is supported.
 
-## My ownership
+## Engineering highlights
 
-As the independent developer, I am responsible for:
+### Persistence is product behavior
 
-- product definition and feature shaping;
-- Swift and SwiftUI development;
-- persistence and synchronization behavior;
-- onboarding, restore, and reinstall considerations;
-- Apple-platform integrations;
-- localization;
-- unit, manual, and regression testing;
-- TestFlight validation;
-- release-readiness review;
-- workflow design and durable project documentation.
+SwiftData and private CloudKit synchronization are treated as user-facing reliability work, not implementation details. Restore, relaunch, reinstall, and larger-data behavior are validated because a successful compile says nothing about whether a returning user's state is actually safe.
 
-## Engineering scope
+### Apple services are integrated as boundaries
 
-The public technical description intentionally stays at platform level:
+StoreKit 2, HealthKit, Sign in with Apple, CloudKit, and TestFlight each introduce different state, permission, account, or lifecycle boundaries. The product work includes not only wiring these frameworks, but deciding what the app should do when their state is delayed, missing, restored, or unavailable.
 
-- **SwiftUI** for the state-driven iPhone experience;
-- **SwiftData** for local persistence;
-- **private CloudKit synchronization** for user-owned data;
-- **StoreKit 2** for purchases and subscription foundations;
-- **HealthKit** for optional activity-aware context;
-- **Sign in with Apple** for account access;
-- **XCTest, Xcode, and TestFlight** for validation and release preparation.
+### Release work is part of development
 
-Implementation architecture, identifiers, schemas, product logic, internal tooling, and source code remain private.
+GlassBox development includes regression review, release builds, TestFlight sessions, physical-device checks, persistence validation, privacy review, and explicit acceptance of user-facing behavior.
 
-## Validation approach
+### watchOS is being explored as a real execution surface
 
-GlassBox is validated through a combination of:
+The current watchOS direction focuses on meditation: the Watch should become the primary execution surface while iPhone remains better suited to setup, history, and reflection.
 
-- focused unit and contract-style tests where appropriate;
-- physical iPhone builds and targeted runtime checks;
-- TestFlight sessions;
-- manual functional and regression passes;
-- issue reproduction and correction verification;
-- persistence, restore, relaunch, and reinstall checks;
-- release-build and release-readiness review.
-
-A successful compile is treated as one piece of evidence, not proof that every user-facing path works correctly.
-
-## Current state
-
-GlassBox is in TestFlight and is being prepared for App Store release. Current work focuses on reliability, regression coverage, restore and persistence behavior, product polish, and release readiness. No App Store publication is claimed until the product is publicly available.
+The first repository-integrated prototype host has passed a physical Apple Watch launch/build smoke. The meditation visual/motion system remains prototype work; this repository does not claim a finished Watch feature or shipped watchOS product.
 
 ## Product preview
 
-> **Language note:** GlassBox was originally designed in Hungarian, so the screenshots intentionally show its native Hungarian interface. This public case study is written in English for international accessibility; the product also supports English localization.
-
-These privacy-reviewed screenshots are real application captures from the current iPhone experience. Visible demonstration values are intentionally retained to show product behavior; no personal display name, journal text, account detail, internal identifier, debug overlay, or private configuration is included.
+> **Language note:** the screenshots intentionally show the original Hungarian interface. They are real privacy-reviewed application captures, not design mocks.
 
 <p align="center">
   <img src="assets/visuals/glassbox-self-energy-check-in.avif" alt="GlassBox guided energy check-in" width="210">
@@ -98,26 +81,55 @@ These privacy-reviewed screenshots are real application captures from the curren
   <img src="assets/visuals/glassbox-reward-companion.avif" alt="GlassBox reward companion and progression" width="210">
 </p>
 
-- **Energy check-in** — A guided wellbeing input turns a subjective state into clear visual context for later trends.
-- **Tasks** — A calm task surface with clear hierarchy and an intentionally supportive empty state.
-- **Habits** — A day-based habit plan combines routines, progress, and lightweight completion tracking.
-- **Reward** — The companion and reward layer turns consistent self-care into visible progression without making productivity punitive.
-
-The screenshots demonstrate product design and user-facing behavior only. They do not expose GlassBox source, architecture, private configuration, or implementation details.
+- **Energy check-in** — guided wellbeing input creates visual context for later reflection and trends.
+- **Tasks** — a calm task surface with clear hierarchy and a supportive empty state.
+- **Habits** — a day-based routine view combines focused habits, progress, and lightweight completion.
+- **Reward** — Vidra and the reward layer turn consistent self-care into visible progression without making productivity punitive.
 
 See the [screenshot publication plan](assets/SCREENSHOT_PLAN.md).
+
+## Validation model
+
+Different changes require different evidence. Depending on the risk and product surface, validation can include:
+
+- focused unit or contract-style tests;
+- debug and release builds;
+- physical iPhone or Apple Watch runs;
+- TestFlight sessions;
+- manual functional and regression passes;
+- issue reproduction and correction verification;
+- persistence, relaunch, restore, and reinstall checks;
+- explicit product acceptance for visual and behavioral work.
+
+A green build is useful evidence. It is not treated as universal proof that the user-facing path works.
+
+## Engineering system around the app
+
+GlassBox also acts as the anchor for a broader engineering environment:
+
+- [Development workflow](https://github.com/Charles-drZ/glassbox-development-workflow) — scoped delivery, evidence, review, and durable project memory;
+- [Automation workflow](https://github.com/Charles-drZ/automation-workflow-showcase) — deterministic evidence collection and review-gated project-memory synchronization;
+- production infrastructure work kept private where publishing deployable details would weaken the security boundary.
+
+These systems support product development; the product itself remains the primary source of value.
+
+## Current state
+
+GlassBox is in active TestFlight hardening and App Store readiness work. Current engineering focus includes reliability, regression coverage, persistence/restore behavior, product polish, and careful expansion to Apple Watch.
+
+No App Store publication or completed watchOS feature is claimed until those milestones are actually reached.
 
 ## Public boundary
 
 This repository does **not** contain:
 
-- GlassBox source code, diffs, patches, or code excerpts;
-- model, schema, class, function, file, or internal identifier details;
-- private CloudKit, signing, StoreKit, HealthKit, or account configuration;
+- GlassBox source code, diffs, patches, or source excerpts;
+- private schemas, identifiers, internal product logic, or implementation topology;
+- CloudKit, signing, StoreKit, HealthKit, or account configuration;
 - internal tickets, prompts, debug tooling, fixtures, or raw test output;
-- unreleased assets, private roadmap detail, or real user data.
+- unreleased assets, private roadmap details, or real user data.
 
-The documents here are independently written public case studies, not redacted exports from the private application repository.
+The material here is independently written for the public portfolio. It is not a redacted copy of the private application repository.
 
 ## Explore the case study
 
@@ -131,6 +143,7 @@ The documents here are independently written public case studies, not redacted e
 ## Related work
 
 - [Developer profile](https://github.com/Charles-drZ/Charles-drZ)
-- [Development workflow case study](https://github.com/Charles-drZ/glassbox-development-workflow)
-- [Automation workflow case study](https://github.com/Charles-drZ/automation-workflow-showcase)
-- [Raspberry Home case study](https://github.com/Charles-drZ/raspberry-home-showcase)
+- [NodeMedic](https://github.com/Charles-drZ/nodemedic-showcase)
+- [Raspberry Home](https://github.com/Charles-drZ/raspberry-home-showcase)
+- [Development workflow](https://github.com/Charles-drZ/glassbox-development-workflow)
+- [Automation workflow](https://github.com/Charles-drZ/automation-workflow-showcase)
