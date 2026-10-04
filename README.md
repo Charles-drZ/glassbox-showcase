@@ -13,10 +13,10 @@ The application source remains private. This repository shows the product, engin
 ## Product at a glance
 
 **Role:** Independent product developer / engineer  
-**Platforms:** iPhone; watchOS meditation prototype work in progress  
-**Core technologies:** Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple  
-**Validation:** XCTest, manual and regression testing, TestFlight, restore/reinstall checks, physical-device validation  
-**Product stage:** TestFlight hardening and App Store readiness  
+**Platforms:** iPhone; standalone Settle watchOS meditation experience  
+**Core technologies:** Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple, watchOS  
+**Validation:** XCTest, manual and regression testing, TestFlight, restore/reinstall checks, physical iPhone and Apple Watch validation  
+**Product stage:** iPhone TestFlight hardening; Settle watchOS product hardening  
 **Source:** Private by design
 
 ## What I own
@@ -32,6 +32,7 @@ GlassBox is not a collection of isolated SwiftUI screens. I am responsible for t
 - HealthKit integration;
 - Sign in with Apple;
 - localization;
+- watchOS runtime, HealthKit, recovery, haptic, and physical-device behavior;
 - unit, manual, regression, and physical-device testing;
 - TestFlight validation and release-readiness review;
 - supporting automation, infrastructure, and durable engineering documentation.
@@ -50,6 +51,31 @@ The iPhone experience is organized around five connected areas:
 
 Hungarian is the original interface language and English localization is supported.
 
+## Settle on Apple Watch
+
+Settle is the watchOS meditation surface inside the GlassBox product family.
+
+It is no longer only a prototype host. The current implementation has a dedicated standalone Watch target and has been exercised repeatedly on physical Apple Watch hardware.
+
+Current validated product/engineering scope includes:
+
+- 1–60 minute duration selection through the Digital Crown;
+- a production meditation renderer and dedicated Watch interaction shell;
+- `WKExtendedRuntimeSession` continuity so a session can survive wrist-down / display sleep;
+- explicit completion, cancellation, interruption, and recovery semantics;
+- HealthKit Mindful Minutes export after truthful completion;
+- a bounded heart-rate sensor sidecar that does not save a workout artifact;
+- completion haptics;
+- HealthKit purpose/permission hardening;
+- dedicated Settle Watch icon and product identity;
+- generic watchOS builds, focused tests, and repeated physical Apple Watch product smokes.
+
+The Watch owns the active meditation execution experience. iPhone remains the better surface for broader GlassBox context, history, and reflection.
+
+This repository does **not** claim that Settle is App Store shipped. It does claim a working, physically validated watchOS product surface under active hardening.
+
+[Read the Settle watchOS engineering case study →](docs/settle-watchos.md)
+
 ## Engineering highlights
 
 ### Persistence is product behavior
@@ -58,17 +84,17 @@ SwiftData and private CloudKit synchronization are treated as user-facing reliab
 
 ### Apple services are integrated as boundaries
 
-StoreKit 2, HealthKit, Sign in with Apple, CloudKit, and TestFlight each introduce different state, permission, account, or lifecycle boundaries. The product work includes not only wiring these frameworks, but deciding what the app should do when their state is delayed, missing, restored, or unavailable.
+StoreKit 2, HealthKit, Sign in with Apple, CloudKit, TestFlight, and WatchKit each introduce different state, permission, account, or lifecycle boundaries. The product work includes not only wiring these frameworks, but deciding what the app should do when their state is delayed, missing, restored, unavailable, interrupted, or resumed.
 
 ### Release work is part of development
 
 GlassBox development includes regression review, release builds, TestFlight sessions, physical-device checks, persistence validation, privacy review, and explicit acceptance of user-facing behavior.
 
-### watchOS is being explored as a real execution surface
+### Physical-device validation is authoritative for Watch behavior
 
-The current watchOS direction focuses on meditation: the Watch should become the primary execution surface while iPhone remains better suited to setup, history, and reflection.
+A simulator or successful generic watchOS build is useful evidence, but it is not enough for product acceptance.
 
-The first repository-integrated prototype host has passed a physical Apple Watch launch/build smoke. The meditation visual/motion system remains prototype work; this repository does not claim a finished Watch feature or shipped watchOS product.
+Settle work has therefore used physical Apple Watch smokes for runtime continuity, Digital Crown behavior, renderer/motion acceptance, interruption recovery, and other device-specific behavior where the simulator cannot provide equivalent confidence.
 
 ## Product preview
 
@@ -94,6 +120,7 @@ Different changes require different evidence. Depending on the risk and product 
 
 - focused unit or contract-style tests;
 - debug and release builds;
+- generic iOS/watchOS builds;
 - physical iPhone or Apple Watch runs;
 - TestFlight sessions;
 - manual functional and regression passes;
@@ -115,15 +142,17 @@ These systems support product development; the product itself remains the primar
 
 ## Current state
 
-GlassBox is in active TestFlight hardening and App Store readiness work. Current engineering focus includes reliability, regression coverage, persistence/restore behavior, product polish, and careful expansion to Apple Watch.
+GlassBox is in active TestFlight and release-readiness hardening on iPhone.
 
-No App Store publication or completed watchOS feature is claimed until those milestones are actually reached.
+Settle is a working and physically validated watchOS meditation experience under continued product hardening. Current work includes interaction polish, HealthKit behavior, statistics/history integration, and release-quality validation.
+
+No App Store publication is claimed until that milestone actually exists.
 
 ## Public boundary
 
 This repository does **not** contain:
 
-- GlassBox source code, diffs, patches, or source excerpts;
+- GlassBox or Settle source code, diffs, patches, or source excerpts;
 - private schemas, identifiers, internal product logic, or implementation topology;
 - CloudKit, signing, StoreKit, HealthKit, or account configuration;
 - internal tickets, prompts, debug tooling, fixtures, or raw test output;
@@ -135,6 +164,7 @@ The material here is independently written for the public portfolio. It is not a
 
 - [Product overview](docs/product-overview.md)
 - [Technical overview](docs/technical-overview.md)
+- [Settle watchOS engineering](docs/settle-watchos.md)
 - [Testing and validation](docs/testing-and-validation.md)
 - [Development lessons](docs/development-lessons.md)
 - [Privacy and source code](docs/privacy-and-source-code.md)
@@ -143,6 +173,7 @@ The material here is independently written for the public portfolio. It is not a
 ## Related work
 
 - [Developer profile](https://github.com/Charles-drZ/Charles-drZ)
+- [Glassoft Agent Runtime](https://github.com/Charles-drZ/glassoft-agent-runtime-showcase)
 - [NodeMedic](https://github.com/Charles-drZ/nodemedic-showcase)
 - [Raspberry Home](https://github.com/Charles-drZ/raspberry-home-showcase)
 - [Development workflow](https://github.com/Charles-drZ/glassbox-development-workflow)
