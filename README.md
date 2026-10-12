@@ -4,7 +4,7 @@
 
 **An independent Apple-platform productivity and self-care product built around “Productivity without guilt.”**
 
-GlassBox combines tasks, habits, mood tracking, journaling, health-aware context, rewards, and a companion layer into one calm daily system.
+GlassBox combines tasks, habits, mood tracking, journaling, health-aware context, rewards, a companion layer, and increasingly deeper wellbeing intelligence across iPhone and Apple Watch.
 
 The product is also my primary long-running Apple-platform engineering project: I own product shaping, SwiftUI implementation, persistence and restore behavior, Apple integrations, validation, release preparation, and the engineering workflow around the app.
 
@@ -16,7 +16,7 @@ The application source remains private. This repository shows the product, engin
 **Platforms:** iPhone; standalone Settle watchOS meditation experience  
 **Core technologies:** Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple, watchOS  
 **Validation:** XCTest, manual and regression testing, TestFlight, restore/reinstall checks, physical iPhone and Apple Watch validation  
-**Product stage:** iPhone TestFlight hardening; Settle watchOS product hardening  
+**Product stage:** iPhone TestFlight/product hardening; Settle watchOS product hardening and visual refinement  
 **Source:** Private by design
 
 ## What I own
@@ -68,6 +68,7 @@ Current validated product/engineering scope includes:
 - completion haptics;
 - HealthKit purpose/permission hardening;
 - dedicated Settle Watch icon and product identity;
+- a growing setup/active visual language with product-owned soul-symbol exploration and matched-geometry handoff work;
 - generic watchOS builds, focused tests, and repeated physical Apple Watch product smokes.
 
 The Watch owns the active meditation execution experience. iPhone remains the better surface for broader GlassBox context, history, and reflection.
@@ -75,6 +76,21 @@ The Watch owns the active meditation execution experience. iPhone remains the be
 This repository does **not** claim that Settle is App Store shipped. It does claim a working, physically validated watchOS product surface under active hardening.
 
 [Read the Settle watchOS engineering case study →](docs/settle-watchos.md)
+
+## Current iPhone product evolution
+
+Recent iPhone work has moved beyond the earlier TestFlight baseline into richer, source-aware wellbeing history.
+
+Current implemented product foundations include:
+
+- truthful **7/30-day Physical history** with measured coverage, completed-day averages, best-day facts, and current-goal context;
+- workout-history authority and compact historical workout summaries;
+- durable app-owned mindful-session records for iPhone Meditation and Breathing;
+- source-aware HealthKit reconciliation that can distinguish iPhone Meditation, iPhone Breathing, Watch Settle, unknown GlassBox sources, and external producers;
+- Watch Settle completions admitted as Meditation authority without duplicating matched iPhone exports;
+- a deterministic **Meditation ↔ Mood** relationship engine that applies evidence gates, context matching, ambiguity exclusion, and bounded composition with other routine relationships.
+
+These features are designed around explicit source authority and truthful missing/unavailable states rather than treating HealthKit or local persistence as interchangeable truth.
 
 ## Engineering highlights
 
@@ -144,7 +160,7 @@ These systems support product development; the product itself remains the primar
 
 GlassBox is in active TestFlight and release-readiness hardening on iPhone.
 
-Settle is a working and physically validated watchOS meditation experience under continued product hardening. Current work includes interaction polish, HealthKit behavior, statistics/history integration, and release-quality validation.
+Settle is a working and physically validated watchOS meditation experience under continued product hardening. Current work includes setup-symbol/visual-language refinement, HealthKit behavior, statistics/history integration, iPhone Meditation authority, and release-quality validation. New visual candidates remain subject to physical Apple Watch product acceptance before being treated as final.
 
 No App Store publication is claimed until that milestone actually exists.
 
