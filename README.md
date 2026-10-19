@@ -4,6 +4,8 @@
 
 **An independent Apple-platform productivity and self-care product built around “Productivity without guilt.”**
 
+**Focus:** Swift · SwiftUI · iOS · watchOS · HealthKit · SwiftData · Apple product engineering
+
 GlassBox combines tasks, habits, mood tracking, journaling, health-aware context, rewards, a companion layer, and increasingly deeper wellbeing intelligence across iPhone and Apple Watch.
 
 The product is also my primary long-running Apple-platform engineering project: I own product shaping, SwiftUI implementation, persistence and restore behavior, Apple integrations, validation, release preparation, and the engineering workflow around the app.
@@ -185,6 +187,10 @@ The material here is independently written for the public portfolio. It is not a
 - [Development lessons](docs/development-lessons.md)
 - [Privacy and source code](docs/privacy-and-source-code.md)
 - [Changelog](CHANGELOG.md)
+
+## Follow the work
+
+For accepted milestones, new public case studies and short engineering notes, follow **[@Charles-drZ](https://github.com/Charles-drZ)**.
 
 ## Related work
 
