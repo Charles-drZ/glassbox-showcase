@@ -91,11 +91,21 @@ Motion work is validated on physical Apple Watch hardware because subtle animati
 
 Reduce Motion behavior remains a first-class boundary.
 
-### Public visual evidence
+### Real Settle watchOS screenshots
 
-The current public showcase **does not include a privacy-reviewed set of real Settle Watch screenshots**. This is a presentation gap, not evidence that the Watch feature does not exist. The intended next assets are real captures of duration selection and an active meditation on an accepted physical-device build, with no account/health/private data exposed.
+These three owner-supplied captures show Settle's **visible** meditation interface on November 8, 2026. They are not generated mockups, and are not independently reproducible without the private application build.
 
-No design mock or rendered concept is presented as a physical Apple Watch product capture.
+<p align="center">
+  <a href="../assets/visuals/settle-duration-selection.jpg"><img src="../assets/visuals/settle-duration-selection.jpg" alt="Settle duration selection screen, five minutes and Begin" width="185"></a>
+  <a href="../assets/visuals/settle-session-transition.jpg"><img src="../assets/visuals/settle-session-transition.jpg" alt="Settle purple ribbon transition visual" width="185"></a>
+  <a href="../assets/visuals/settle-active-countdown.jpg"><img src="../assets/visuals/settle-active-countdown.jpg" alt="Settle active countdown with four minutes fifty-six seconds remaining" width="185"></a>
+</p>
+
+- **Duration selection:** a five-minute selection with an explicit Begin action. The implementation supports 1–60 minutes and Digital Crown interaction; one still image cannot prove the full interaction range.
+- **Transition visual:** Settle's purple ribbon identity during a visual transition. A screenshot does not prove animation smoothness or Reduce Motion behavior.
+- **Active meditation:** a live-session countdown captured at 04:56. This frame does not establish background continuity, HealthKit write acceptance, or interruption/recovery correctness.
+
+Real-device behavior and side effects require their own tests and product acceptance, as described below.
 
 ## Validation strategy
 
