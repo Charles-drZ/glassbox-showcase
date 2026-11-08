@@ -1,219 +1,67 @@
-[← Developer profile](https://github.com/Charles-drZ)
+[← Apple developer profile](https://github.com/Charles-drZ)
 
-# GlassBox
+# GlassBox — iOS & watchOS
 
-**An independent Apple-platform productivity and self-care product built around “Productivity without guilt.”**
+**An independent wellbeing and productivity product for iPhone, with Settle as a dedicated Apple Watch meditation experience.**
 
-**Focus:** Swift · SwiftUI · iOS · watchOS · HealthKit · SwiftData · Apple product engineering
+**Swift · SwiftUI · SwiftData · CloudKit · HealthKit · StoreKit 2 · watchOS**
 
-GlassBox combines tasks, habits, mood tracking, journaling, health-aware context, rewards, a companion layer, and increasingly deeper wellbeing intelligence across iPhone and Apple Watch.
+GlassBox combines habits, tasks, mood, journaling and gentle progression around one product idea: *productivity without guilt*. I work on its SwiftUI implementation, Apple-platform integrations, persistence, debugging, validation and release preparation.
 
-The product is also my primary long-running Apple-platform engineering project: I own product shaping, SwiftUI implementation, persistence and restore behavior, Apple integrations, validation, release preparation, and the engineering workflow around the app.
+**Status:** Active iPhone TestFlight/product hardening and watchOS refinement. **Not App Store shipped.** Implementation is private; this repository documents the product, engineering decisions and selected real application screenshots.
 
-The application source remains private. This repository shows the product, engineering scope, validation discipline, and privacy-reviewed results without publishing proprietary implementation.
+## See the product
 
-## Product at a glance
-
-**Role:** Independent product developer / engineer  
-**Platforms:** iPhone; standalone Settle watchOS meditation experience  
-**Core technologies:** Swift, SwiftUI, SwiftData, CloudKit, StoreKit 2, HealthKit, Sign in with Apple, watchOS  
-**Validation:** XCTest, manual and regression testing, TestFlight, restore/reinstall checks, physical iPhone and Apple Watch validation  
-**Product stage:** iPhone TestFlight/product hardening; Settle watchOS product hardening and visual refinement  
-**Source:** Private by design
-
-## What I own
-
-GlassBox is not a collection of isolated SwiftUI screens. I am responsible for the product as a system, including:
-
-- product definition and feature shaping;
-- Swift and SwiftUI implementation;
-- state and persistence behavior;
-- private CloudKit synchronization;
-- restore, relaunch, and reinstall paths;
-- StoreKit 2 purchase/subscription foundations;
-- HealthKit integration;
-- Sign in with Apple;
-- localization;
-- watchOS runtime, HealthKit, recovery, haptic, and physical-device behavior;
-- unit, manual, regression, and physical-device testing;
-- TestFlight validation and release-readiness review;
-- supporting automation, infrastructure, and durable engineering documentation.
-
-## Product experience
-
-GlassBox is built around a simple idea: productivity should help users regain clarity after imperfect days instead of turning missed tasks into punishment.
-
-The iPhone experience is organized around five connected areas:
-
-- **Self** — daily context, mood, activity-aware information, and reflection;
-- **Tasks** — lightweight planning and completion;
-- **Habits** — focused daily routines;
-- **Journal** — notes, gratitude, and reflection;
-- **Reward** — gentle progression and the Vidra companion layer.
-
-Hungarian is the original interface language and English localization is supported.
-
-## Settle on Apple Watch
-
-Settle is the watchOS meditation surface inside the GlassBox product family.
-
-It is no longer only a prototype host. The current implementation has a dedicated standalone Watch target and has been exercised repeatedly on physical Apple Watch hardware.
-
-Current validated product/engineering scope includes:
-
-- 1–60 minute duration selection through the Digital Crown;
-- a production meditation renderer and dedicated Watch interaction shell;
-- `WKExtendedRuntimeSession` continuity so a session can survive wrist-down / display sleep;
-- explicit completion, cancellation, interruption, and recovery semantics;
-- HealthKit Mindful Minutes export after truthful completion;
-- a bounded heart-rate sensor sidecar that does not save a workout artifact;
-- completion haptics;
-- HealthKit purpose/permission hardening;
-- dedicated Settle Watch icon and product identity;
-- a growing setup/active visual language with product-owned soul-symbol exploration and matched-geometry handoff work;
-- generic watchOS builds, focused tests, and repeated physical Apple Watch product smokes.
-
-The Watch owns the active meditation execution experience. iPhone remains the better surface for broader GlassBox context, history, and reflection.
-
-This repository does **not** claim that Settle is App Store shipped. It does claim a working, physically validated watchOS product surface under active hardening.
-
-[Read the Settle watchOS engineering case study →](docs/settle-watchos.md)
-
-## Current iPhone product evolution
-
-Recent iPhone work has moved beyond the earlier TestFlight baseline into richer, source-aware wellbeing history.
-
-Current implemented product foundations include:
-
-- truthful **7/30-day Physical history** with measured coverage, completed-day averages, best-day facts, and current-goal context;
-- workout-history authority and compact historical workout summaries;
-- durable app-owned mindful-session records for iPhone Meditation and Breathing;
-- source-aware HealthKit reconciliation that can distinguish iPhone Meditation, iPhone Breathing, Watch Settle, unknown GlassBox sources, and external producers;
-- Watch Settle completions admitted as Meditation authority without duplicating matched iPhone exports;
-- a deterministic **Meditation ↔ Mood** relationship engine that applies evidence gates, context matching, ambiguity exclusion, and bounded composition with other routine relationships.
-
-These features are designed around explicit source authority and truthful missing/unavailable states rather than treating HealthKit or local persistence as interchangeable truth.
-
-### Recent Habits product work
-
-The **November 2026** merged development line adds a native Today/Week view with a seven-day overview, a read-first Habit Detail experience, and a contextual editing path that keeps schedule-history eligibility explicit. The weekly state distinguishes verified completion, known scheduled days, known unscheduled days, and unresolved history rather than filling gaps with invented progress.
-
-The underlying Habit scheduling work also pays careful attention to transaction verification and persistence before publishing success. These are accepted source/PR milestones; a passing host test or unsigned build is **not** a claim that every updated SwiftUI path has completed physical-device Product acceptance.
-
-## Engineering highlights
-
-### Persistence is product behavior
-
-SwiftData and private CloudKit synchronization are treated as user-facing reliability work, not implementation details. Restore, relaunch, reinstall, and larger-data behavior are validated because a successful compile says nothing about whether a returning user's state is actually safe.
-
-### Apple services are integrated as boundaries
-
-StoreKit 2, HealthKit, Sign in with Apple, CloudKit, TestFlight, and WatchKit each introduce different state, permission, account, or lifecycle boundaries. The product work includes not only wiring these frameworks, but deciding what the app should do when their state is delayed, missing, restored, unavailable, interrupted, or resumed.
-
-### Release work is part of development
-
-GlassBox development includes regression review, release builds, TestFlight sessions, physical-device checks, persistence validation, privacy review, and explicit acceptance of user-facing behavior.
-
-### Physical-device validation is authoritative for Watch behavior
-
-A simulator or successful generic watchOS build is useful evidence, but it is not enough for product acceptance.
-
-Settle work has therefore used physical Apple Watch smokes for runtime continuity, Digital Crown behavior, renderer/motion acceptance, interruption recovery, and other device-specific behavior where the simulator cannot provide equivalent confidence.
-
-## Product preview
-
-> **Language note:** the screenshots intentionally show the original Hungarian interface. They are real privacy-reviewed application captures, not design mocks.
+The images below are real, privacy-reviewed iPhone captures from an earlier accepted product state. They are **not** presented as screenshots of the newest Week/Detail redesign.
 
 <p align="center">
-  <img src="assets/visuals/glassbox-self-energy-check-in.avif" alt="GlassBox guided energy check-in" width="210">
-  <img src="assets/visuals/glassbox-tasks-empty-state.avif" alt="GlassBox task empty state" width="210">
-  <img src="assets/visuals/glassbox-habits-daily-plan.avif" alt="GlassBox daily habit plan" width="210">
-  <img src="assets/visuals/glassbox-reward-companion.avif" alt="GlassBox reward companion and progression" width="210">
+  <img src="assets/visuals/glassbox-self-energy-check-in.avif" alt="GlassBox energy check-in on iPhone" width="210">
+  <img src="assets/visuals/glassbox-tasks-empty-state.avif" alt="GlassBox tasks empty state on iPhone" width="210">
+  <img src="assets/visuals/glassbox-habits-daily-plan.avif" alt="GlassBox Habits daily plan on iPhone" width="210">
+  <img src="assets/visuals/glassbox-reward-companion.avif" alt="GlassBox companion and reward experience on iPhone" width="210">
 </p>
 
-- **Energy check-in** — guided wellbeing input creates visual context for later reflection and trends.
-- **Tasks** — a calm task surface with clear hierarchy and a supportive empty state.
-- **Habits** — a day-based routine view combines focused habits, progress, and lightweight completion.
-- **Reward** — Vidra and the reward layer turn consistent self-care into visible progression without making productivity punitive.
+- **Self / Mood:** reflection and personal context.
+- **Tasks / Habits:** focused planning with careful completion and schedule semantics.
+- **Journal:** notes, gratitude and reflection.
+- **Reward:** gentle progress and the Vidra companion layer.
 
-See the [screenshot publication plan](assets/SCREENSHOT_PLAN.md).
+Hungarian is the original product language; English localization is also supported.
 
-## Validation model
+## Native Apple engineering
 
-Different changes require different evidence. Depending on the risk and product surface, validation can include:
+**On iPhone:** SwiftUI state, SwiftData and private CloudKit persistence, HealthKit integration, StoreKit 2 foundations, restoration and app lifecycle. Recent accepted development includes historical wellbeing evidence and a read-first Habits experience with a seven-day overview, safe editing paths and bounded reminders.
 
-- focused unit or contract-style tests;
-- debug and release builds;
-- generic iOS/watchOS builds;
-- physical iPhone or Apple Watch runs;
-- TestFlight sessions;
-- manual functional and regression passes;
-- issue reproduction and correction verification;
-- persistence, relaunch, restore, and reinstall checks;
-- explicit product acceptance for visual and behavioral work.
+**On Apple Watch:** Settle provides standalone meditation sessions with 1–60 minute Digital Crown duration selection, session completion/interruption/recovery behavior and HealthKit Mindful Minutes export. Watch-specific continuity and interactions have been exercised on physical Apple Watch hardware; new visual designs still require their own physical acceptance.
 
-A green build is useful evidence. It is not treated as universal proof that the user-facing path works.
+**In validation:** compiler success, isolated host tests, source checks, device observations and Product acceptance remain separate. Some recent Habits changes have extensive host-test and generic-build evidence but **no claimed physical UI acceptance**.
 
-## Skill-guided Codex development for Apple platforms
+## Engineering case studies
 
-GlassBox is also the product where I develop a practical, **skill-guided Codex workflow** for SwiftUI, iOS and watchOS.
+- **[Habits: showing only what the data proves](docs/habits-week-evidence.md)** — real SwiftUI product decision, four historical states, pending writes, rejected alternatives, tests and remaining limits.
+- **[Settle on Apple Watch](docs/settle-watchos.md)** — runtime continuity, Crown behavior, interruption and HealthKit boundaries.
+- **[Technical overview](docs/technical-overview.md)** — native architecture and Apple integration boundaries.
+- **[Testing and validation](docs/testing-and-validation.md)** — what different levels of validation actually establish.
+- **[Development lessons](docs/development-lessons.md)** — additional decisions and trade-offs.
 
-The accepted development branch now includes the official **Build iOS Apps** Codex plugin, a pinned SwiftUI Expert reference skill, and two project-specific skills: native Xcode workflow/diagnosis and test-evidence planning. A narrow read-only subagent pilot was verified; it does not prove universal quality or speed gains.
+The public case studies do not include native source code or independently runnable tests. They provide context for work whose private implementation cannot be inspected by a public GitHub visitor.
 
-Skills are chosen for the accepted task. They do not override Apple platform constraints, authorize device operations or replace native Xcode, XCTest, runtime and human acceptance evidence. The plugin's bundled execution-capable XcodeBuildMCP stays disabled.
+## How I develop
 
-[Read the public skill-guided Apple development case study →](https://github.com/Charles-drZ/glassbox-development-workflow/blob/main/docs/skill-guided-apple-development.md)
+GlassBox is also the practical Apple application behind my [skill-guided Codex workflow](https://github.com/Charles-drZ/glassbox-development-workflow). It combines official and project-specific SwiftUI/Xcode/test-evidence skills with accepted scope, source review, native tooling and human acceptance; the skills do not authorize builds or device access by themselves.
 
-## Engineering system around the app
+## Current limits and public boundary
 
-GlassBox also acts as the anchor for a broader engineering environment:
+GlassBox remains under TestFlight/release hardening. Newer features and UX proposals are not automatically accepted because a PR merged or a host test passed.
 
-- [Apple development workflow](https://github.com/Charles-drZ/glassbox-development-workflow) — Codex skills, native Xcode routing, scoped delivery, evidence, review, and durable project memory;
-- [Automation workflow](https://github.com/Charles-drZ/automation-workflow-showcase) — deterministic evidence collection and review-gated project-memory synchronization;
-- production infrastructure work kept private where publishing deployable details would weaken the security boundary.
+The repository does not publish private application source, signing/CloudKit/StoreKit configuration, internal fixtures, prompts, operational identifiers or user data. No App Store release is claimed.
 
-These systems support product development; the product itself remains the primary source of value.
+[Product overview](docs/product-overview.md) · [Privacy and source code](docs/privacy-and-source-code.md) · [Changelog](CHANGELOG.md)
 
-## Current state
+## Related Apple work
 
-GlassBox is in active TestFlight and release-readiness hardening on iPhone.
-
-Settle is a working and physically validated watchOS meditation experience under continued product hardening. Current work includes setup-symbol/visual-language refinement, HealthKit behavior, statistics/history integration, iPhone Meditation authority, and release-quality validation. New visual candidates remain subject to physical Apple Watch product acceptance before being treated as final.
-
-No App Store publication is claimed until that milestone actually exists.
-
-## Public boundary
-
-This repository does **not** contain:
-
-- GlassBox or Settle source code, diffs, patches, or source excerpts;
-- private schemas, identifiers, internal product logic, or implementation topology;
-- CloudKit, signing, StoreKit, HealthKit, or account configuration;
-- internal tickets, prompts, debug tooling, fixtures, or raw test output;
-- unreleased assets, private roadmap details, or real user data.
-
-The material here is independently written for the public portfolio. It is not a redacted copy of the private application repository.
-
-## Explore the case study
-
-- [Product overview](docs/product-overview.md)
-- [Technical overview](docs/technical-overview.md)
-- [Settle watchOS engineering](docs/settle-watchos.md)
-- [Testing and validation](docs/testing-and-validation.md)
-- [Development lessons](docs/development-lessons.md)
-- [Privacy and source code](docs/privacy-and-source-code.md)
-- [Changelog](CHANGELOG.md)
-
-## Follow the work
-
-For accepted milestones, new public case studies and short engineering notes, follow **[@Charles-drZ](https://github.com/Charles-drZ)**.
-
-## Related work
-
-- [Developer profile](https://github.com/Charles-drZ/Charles-drZ)
-- [GlassPort native macOS developer tool](https://github.com/Charles-drZ/glassport-showcase)
+- [GlassPort — native macOS developer workspace](https://github.com/Charles-drZ/glassport-showcase)
 - [Skill-guided Apple development workflow](https://github.com/Charles-drZ/glassbox-development-workflow)
-- [Glassoft Agent Runtime](https://github.com/Charles-drZ/glassoft-agent-runtime-showcase)
-- [NodeMedic](https://github.com/Charles-drZ/nodemedic-showcase)
-- [Raspberry Home](https://github.com/Charles-drZ/raspberry-home-showcase)
-- [Automation workflow](https://github.com/Charles-drZ/automation-workflow-showcase)
+- [Developer profile](https://github.com/Charles-drZ)
+
+For future accepted milestones, follow [@Charles-drZ](https://github.com/Charles-drZ).
