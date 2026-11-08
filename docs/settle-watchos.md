@@ -91,6 +91,12 @@ Motion work is validated on physical Apple Watch hardware because subtle animati
 
 Reduce Motion behavior remains a first-class boundary.
 
+### Public visual evidence
+
+The current public showcase **does not include a privacy-reviewed set of real Settle Watch screenshots**. This is a presentation gap, not evidence that the Watch feature does not exist. The intended next assets are real captures of duration selection and an active meditation on an accepted physical-device build, with no account/health/private data exposed.
+
+No design mock or rendered concept is presented as a physical Apple Watch product capture.
+
 ## Validation strategy
 
 Validation is layered rather than reduced to one green build.
