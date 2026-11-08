@@ -28,6 +28,20 @@ The images below are real, privacy-reviewed iPhone captures from an earlier acce
 
 Hungarian is the original product language; English localization is also supported.
 
+### Settle on Apple Watch
+
+Three real, owner-supplied watchOS captures from **November 8, 2026** show the Settle meditation interface. These are application views, not rendered concepts; still images do not by themselves validate the underlying Watch runtime or HealthKit side effects.
+
+<p align="center">
+  <a href="assets/visuals/settle-duration-selection.jpg"><img src="assets/visuals/settle-duration-selection.jpg" alt="Settle duration selection with a five-minute meditation and Begin button" width="185"></a>
+  <a href="assets/visuals/settle-session-transition.jpg"><img src="assets/visuals/settle-session-transition.jpg" alt="Settle meditation transition displaying the purple infinite-loop symbol" width="185"></a>
+  <a href="assets/visuals/settle-active-countdown.jpg"><img src="assets/visuals/settle-active-countdown.jpg" alt="Settle active meditation with the animated visual captured at four minutes fifty-six seconds remaining" width="185"></a>
+</p>
+
+**01 — Choose a duration** · **02 — Settle transition** · **03 — Active meditation**
+
+[Read the watchOS engineering case study →](docs/settle-watchos.md)
+
 ## Native Apple engineering
 
 **On iPhone:** SwiftUI state, SwiftData and private CloudKit persistence, HealthKit integration, StoreKit 2 foundations, restoration and app lifecycle. Recent accepted development includes historical wellbeing evidence and a read-first Habits experience with a seven-day overview, safe editing paths and bounded reminders.
