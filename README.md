@@ -94,6 +94,12 @@ Current implemented product foundations include:
 
 These features are designed around explicit source authority and truthful missing/unavailable states rather than treating HealthKit or local persistence as interchangeable truth.
 
+### Recent Habits product work
+
+The **November 2026** merged development line adds a native Today/Week view with a seven-day overview, a read-first Habit Detail experience, and a contextual editing path that keeps schedule-history eligibility explicit. The weekly state distinguishes verified completion, known scheduled days, known unscheduled days, and unresolved history rather than filling gaps with invented progress.
+
+The underlying Habit scheduling work also pays careful attention to transaction verification and persistence before publishing success. These are accepted source/PR milestones; a passing host test or unsigned build is **not** a claim that every updated SwiftUI path has completed physical-device Product acceptance.
+
 ## Engineering highlights
 
 ### Persistence is product behavior
@@ -148,11 +154,21 @@ Different changes require different evidence. Depending on the risk and product 
 
 A green build is useful evidence. It is not treated as universal proof that the user-facing path works.
 
+## Skill-guided Codex development for Apple platforms
+
+GlassBox is also the product where I develop a practical, **skill-guided Codex workflow** for SwiftUI, iOS and watchOS.
+
+The accepted development branch now includes the official **Build iOS Apps** Codex plugin, a pinned SwiftUI Expert reference skill, and two project-specific skills: native Xcode workflow/diagnosis and test-evidence planning. A narrow read-only subagent pilot was verified; it does not prove universal quality or speed gains.
+
+Skills are chosen for the accepted task. They do not override Apple platform constraints, authorize device operations or replace native Xcode, XCTest, runtime and human acceptance evidence. The plugin's bundled execution-capable XcodeBuildMCP stays disabled.
+
+[Read the public skill-guided Apple development case study →](https://github.com/Charles-drZ/glassbox-development-workflow/blob/main/docs/skill-guided-apple-development.md)
+
 ## Engineering system around the app
 
 GlassBox also acts as the anchor for a broader engineering environment:
 
-- [Development workflow](https://github.com/Charles-drZ/glassbox-development-workflow) — scoped delivery, evidence, review, and durable project memory;
+- [Apple development workflow](https://github.com/Charles-drZ/glassbox-development-workflow) — Codex skills, native Xcode routing, scoped delivery, evidence, review, and durable project memory;
 - [Automation workflow](https://github.com/Charles-drZ/automation-workflow-showcase) — deterministic evidence collection and review-gated project-memory synchronization;
 - production infrastructure work kept private where publishing deployable details would weaken the security boundary.
 
@@ -195,8 +211,9 @@ For accepted milestones, new public case studies and short engineering notes, fo
 ## Related work
 
 - [Developer profile](https://github.com/Charles-drZ/Charles-drZ)
+- [GlassPort native macOS developer tool](https://github.com/Charles-drZ/glassport-showcase)
+- [Skill-guided Apple development workflow](https://github.com/Charles-drZ/glassbox-development-workflow)
 - [Glassoft Agent Runtime](https://github.com/Charles-drZ/glassoft-agent-runtime-showcase)
 - [NodeMedic](https://github.com/Charles-drZ/nodemedic-showcase)
 - [Raspberry Home](https://github.com/Charles-drZ/raspberry-home-showcase)
-- [Development workflow](https://github.com/Charles-drZ/glassbox-development-workflow)
 - [Automation workflow](https://github.com/Charles-drZ/automation-workflow-showcase)
