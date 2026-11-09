@@ -46,8 +46,27 @@ jobs:
         run: |
           set -Eeuo pipefail
           patterns='^[[:space:]]*import[[:space:]]+(SwiftUI|Foundation|SwiftData|CloudKit|StoreKit|HealthKit)([[:space:]]|$)|^[[:space:]]*@(main|Model|State|StateObject|ObservedObject|Environment|EnvironmentObject|Query|Published|AppStorage)([[:space:](]|$)|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?(struct|class|actor|enum|protocol)[[:space:]]+[A-Za-z_][A-Za-z0-9_]*.*\{[[:space:]]*$|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?func[[:space:]]+[A-Za-z_][A-Za-z0-9_]*[[:space:]]*\(|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?var[[:space:]]+body[[:space:]]*:[[:space:]]*some[[:space:]]+View'
-          if grep -RInE --exclude-dir=.git --exclude='public-portfolio-safety.yml' --exclude='public-safety.yml' --exclude='Package.swift' --exclude='EvidenceProjection.swift' --exclude='EvidenceProjectionTests.swift' "$patterns" .; then
+          # Review private-source-shaped text in every tracked file except these
+          # explicitly reviewed public source files, using *full paths*.
+          if git grep -nE "$patterns" -- . \
+            ':!.github/workflows/public-portfolio-safety.yml' \
+            ':!.github/workflows/public-safety.yml' \
+            ':!samples/HabitEvidenceCore/Package.swift' \
+            ':!samples/HabitEvidenceCore/Sources/HabitEvidenceCore/EvidenceProjection.swift' \
+            ':!samples/HabitEvidenceCore/Tests/HabitEvidenceCoreTests/EvidenceProjectionTests.swift'; then
             echo "Swift source-shaped excerpt found in public GlassBox material." >&2
+            exit 1
+          fi
+
+      - name: Reject private Apple framework imports in demo Swift
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          # Sampled code is intentionally platform-independent and newly authored.
+          # This check is a guardrail; a manual source provenance review is still required.
+          patterns='^[[:space:]]*import[[:space:]]+(SwiftUI|SwiftData|CloudKit|StoreKit|HealthKit|AppKit|UIKit)([[:space:]]|$)'
+          if git grep -nE "$patterns" -- 'samples/HabitEvidenceCore/*.swift' 'samples/HabitEvidenceCore/**/*.swift'; then
+            echo "Unexpected Apple implementation dependency in independent public sample." >&2
             exit 1
           fi
 

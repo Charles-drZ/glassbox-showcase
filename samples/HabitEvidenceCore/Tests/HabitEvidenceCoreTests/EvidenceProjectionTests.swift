@@ -47,4 +47,46 @@ struct EvidenceProjectionTests {
         let evidence = DayEvidence(completion: .verifiedSaved, schedule: .planned, writeReview: .settled)
         #expect(DayEvidenceProjection.state(for: evidence) == .completed)
     }
+    @Test func settledEvidenceHasAnExplicitNineCaseTruthTable() {
+        let expected: [(CompletionEvidence, ScheduleEvidence, DayDisplayState)] = [
+            (.verifiedSaved, .planned, .completed),
+            (.verifiedSaved, .notPlanned, .completed),
+            (.verifiedSaved, .unavailable, .completed),
+            (.verifiedAbsent, .planned, .planned),
+            (.verifiedAbsent, .notPlanned, .notScheduled),
+            (.verifiedAbsent, .unavailable, .unresolved),
+            (.unavailable, .planned, .unresolved),
+            (.unavailable, .notPlanned, .unresolved),
+            (.unavailable, .unavailable, .unresolved)
+        ]
+
+        for (completion, schedule, output) in expected {
+            let evidence = DayEvidence(
+                completion: completion,
+                schedule: schedule,
+                writeReview: .settled
+            )
+            #expect(DayEvidenceProjection.state(for: evidence) == output)
+        }
+    }
+
+    @Test func unsettledWriteNeverClaimsFinalTruthForAnyEvidenceCombination() {
+        let completions: [CompletionEvidence] = [.verifiedSaved, .verifiedAbsent, .unavailable]
+        let schedules: [ScheduleEvidence] = [.planned, .notPlanned, .unavailable]
+        let unsettled: [WriteReview] = [.pending, .needsRefresh]
+
+        for review in unsettled {
+            for completion in completions {
+                for schedule in schedules {
+                    let evidence = DayEvidence(
+                        completion: completion,
+                        schedule: schedule,
+                        writeReview: review
+                    )
+                    #expect(DayEvidenceProjection.state(for: evidence) == .unresolved)
+                }
+            }
+        }
+    }
+
 }

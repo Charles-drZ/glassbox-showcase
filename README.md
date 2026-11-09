@@ -62,7 +62,7 @@ The private GlassBox source and its actual tests are not published. The separate
 
 ## Runnable Swift engineering sample
 
-**[HabitEvidenceCore](samples/HabitEvidenceCore/)** is an independently written, dependency-free Swift Package illustrating how a read-only day status can be projected from incomplete or pending evidence. It contains public sample source and eight Swift Testing cases, **not GlassBox application source or copied production tests**.
+**[HabitEvidenceCore](samples/HabitEvidenceCore/)** is an independently written, dependency-free Swift Package illustrating how a read-only day status can be projected from incomplete or pending evidence. It contains public sample source and ten Swift Testing cases, **not GlassBox application source or copied production tests**.
 
 ```sh
 swift test --package-path samples/HabitEvidenceCore
