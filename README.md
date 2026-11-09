@@ -58,7 +58,17 @@ Three real, owner-supplied watchOS captures from **November 8, 2026** show the S
 - **[Testing and validation](docs/testing-and-validation.md)** — what different levels of validation actually establish.
 - **[Development lessons](docs/development-lessons.md)** — additional decisions and trade-offs.
 
-The public case studies do not include native source code or independently runnable tests. They provide context for work whose private implementation cannot be inspected by a public GitHub visitor.
+The private GlassBox source and its actual tests are not published. The separately authored public Swift demonstration below is **not** an extract of the application's implementation.
+
+## Runnable Swift engineering sample
+
+**[HabitEvidenceCore](samples/HabitEvidenceCore/)** is an independently written, dependency-free Swift Package illustrating how a read-only day status can be projected from incomplete or pending evidence. It contains public sample source and ten Swift Testing cases, **not GlassBox application source or copied production tests**.
+
+```sh
+swift test --package-path samples/HabitEvidenceCore
+```
+
+This executable example supports discussion of engineering choices; passing its tests does not validate the private production code. See the [sample's limitations](samples/HabitEvidenceCore/README.md) and the [source boundary](docs/privacy-and-source-code.md).
 
 ## How I develop
 
