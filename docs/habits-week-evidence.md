@@ -29,6 +29,10 @@ An unresolved cell is **not** shown as a failure. Archived history remains histo
 
 The Week view is intentionally read-oriented. Selecting a day navigates to the existing daily experience rather than introducing a competing completion workflow.
 
+## Independently runnable public example
+
+The [HabitEvidenceCore Swift Package](../samples/HabitEvidenceCore/) illustrates this **general presentation decision** using newly authored types and tests. It is not taken from the private implementation, does not reproduce the original test suite and does not establish equivalence with the application.
+
 ## A race the UI must not hide
 
 A user may check or undo a habit while the canonical write is still unresolved.
