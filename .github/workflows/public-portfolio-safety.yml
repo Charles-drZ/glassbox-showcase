@@ -34,9 +34,9 @@ jobs:
         run: |
           set -Eeuo pipefail
           forbidden='(^|/)[^/]+\.(xcodeproj|xcworkspace)(/|$)|\.(swift|pbxproj|xcconfig|entitlements|storekit|plist|xcscheme|xcworkspacedata|diff|patch)$'
-          # This allowlist applies only to independently authored public demonstration files.
-          # All other .swift and application artifacts remain prohibited.
-          if git ls-files | grep -Ei "$forbidden" | grep -Ev '^samples/HabitEvidenceCore/(Package\.swift|Sources/HabitEvidenceCore/EvidenceProjection\.swift|Tests/HabitEvidenceCoreTests/EvidenceProjectionTests\.swift)
+          # Only these exact Swift demonstration paths are allowlisted.
+          # Every other .swift / application artifact remains blocked.
+          if git ls-files | grep -Ei "$forbidden" | grep -Ev '^samples/HabitEvidenceCore/(Package\.swift|Sources/HabitEvidenceCore/EvidenceProjection\.swift|Tests/HabitEvidenceCoreTests/EvidenceProjectionTests\.swift)$'; then
             echo "Application implementation or patch artifact found in the public GlassBox case study." >&2
             exit 1
           fi
@@ -47,59 +47,6 @@ jobs:
           set -Eeuo pipefail
           patterns='^[[:space:]]*import[[:space:]]+(SwiftUI|Foundation|SwiftData|CloudKit|StoreKit|HealthKit)([[:space:]]|$)|^[[:space:]]*@(main|Model|State|StateObject|ObservedObject|Environment|EnvironmentObject|Query|Published|AppStorage)([[:space:](]|$)|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?(struct|class|actor|enum|protocol)[[:space:]]+[A-Za-z_][A-Za-z0-9_]*.*\{[[:space:]]*$|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?func[[:space:]]+[A-Za-z_][A-Za-z0-9_]*[[:space:]]*\(|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?var[[:space:]]+body[[:space:]]*:[[:space:]]*some[[:space:]]+View'
           if grep -RInE --exclude-dir=.git --exclude='public-portfolio-safety.yml' --exclude='public-safety.yml' --exclude='Package.swift' --exclude='EvidenceProjection.swift' --exclude='EvidenceProjectionTests.swift' "$patterns" .; then
-            echo "Swift source-shaped excerpt found in public GlassBox material." >&2
-            exit 1
-          fi
-
-      - name: Scan for high-confidence secrets
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          patterns='BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|github_pat_[A-Za-z0-9_]+|ghp_[A-Za-z0-9]+|sk-[A-Za-z0-9]{20,}|Authorization:[[:space:]]*Bearer[[:space:]]+[A-Za-z0-9._-]+'
-          if grep -RInE --exclude-dir=.git "$patterns" .; then
-            echo "High-confidence secret pattern found." >&2
-            exit 1
-          fi
-
-      - name: Reject private network addresses
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          patterns='(^|[^0-9])(10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|192\.168\.[0-9]{1,3}\.[0-9]{1,3}|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]{1,3}\.[0-9]{1,3})([^0-9]|$)'
-          if grep -RInE --exclude-dir=.git "$patterns" .; then
-            echo "Private IPv4 address found in public material." >&2
-            exit 1
-          fi
-
-      - name: Reject private project and device identifiers
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          patterns='GLA-[0-9]+|000081[0-9A-Fa-f]{2}-[0-9A-Fa-f]{16}'
-          if grep -RInE --exclude-dir=.git "$patterns" .; then
-            echo "Private ticket or physical-device identifier found." >&2
-            exit 1
-          fi
-
-      - name: Confirm permanent source boundary
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          test -s README.md
-          test -s docs/privacy-and-source-code.md
-          grep -Fq 'GlassBox source code is not shared publicly or privately as part of recruitment.' docs/privacy-and-source-code.md
-          grep -Fq 'No complete or partial source access is promised.' docs/privacy-and-source-code.md
-; then
-            echo "Application implementation or patch artifact found in the public GlassBox case study." >&2
-            exit 1
-          fi
-
-      - name: Reject Swift source-shaped excerpts
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          patterns='^[[:space:]]*import[[:space:]]+(SwiftUI|Foundation|SwiftData|CloudKit|StoreKit|HealthKit)([[:space:]]|$)|^[[:space:]]*@(main|Model|State|StateObject|ObservedObject|Environment|EnvironmentObject|Query|Published|AppStorage)([[:space:](]|$)|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?(struct|class|actor|enum|protocol)[[:space:]]+[A-Za-z_][A-Za-z0-9_]*.*\{[[:space:]]*$|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?func[[:space:]]+[A-Za-z_][A-Za-z0-9_]*[[:space:]]*\(|^[[:space:]]*(public[[:space:]]+|private[[:space:]]+|internal[[:space:]]+|fileprivate[[:space:]]+)?var[[:space:]]+body[[:space:]]*:[[:space:]]*some[[:space:]]+View'
-          if grep -RInE --exclude-dir=.git --exclude='public-portfolio-safety.yml' --exclude='public-safety.yml' "$patterns" .; then
             echo "Swift source-shaped excerpt found in public GlassBox material." >&2
             exit 1
           fi
