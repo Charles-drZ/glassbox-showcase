@@ -33,6 +33,8 @@ The Week view is intentionally read-oriented. Selecting a day navigates to the e
 
 The [HabitEvidenceCore Swift Package](../samples/HabitEvidenceCore/) illustrates this **general presentation decision** using newly authored types and tests. It is not taken from the private implementation, does not reproduce the original test suite and does not establish equivalence with the application.
 
+A separate [CivilDayCore example](../samples/CivilDayCore/) illustrates calendar-day boundaries, DST and time-zone capture with independently authored Foundation-only code. It is not GlassBox's private calendar addressing or storage codec.
+
 ## A race the UI must not hide
 
 A user may check or undo a habit while the canonical write is still unresolved.

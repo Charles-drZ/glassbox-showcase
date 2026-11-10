@@ -60,7 +60,7 @@ Three real, owner-supplied watchOS captures from **November 8, 2026** show the S
 
 The private GlassBox source and its actual tests are not published. The separately authored public Swift demonstration below is **not** an extract of the application's implementation.
 
-## Runnable Swift engineering sample
+## Runnable Swift engineering samples
 
 **[HabitEvidenceCore](samples/HabitEvidenceCore/)** is an independently written, dependency-free Swift Package illustrating how a read-only day status can be projected from incomplete or pending evidence. It contains public sample source and ten Swift Testing cases, **not GlassBox application source or copied production tests**.
 
@@ -69,6 +69,14 @@ swift test --package-path samples/HabitEvidenceCore
 ```
 
 This executable example supports discussion of engineering choices; passing its tests does not validate the private production code. See the [sample's limitations](samples/HabitEvidenceCore/README.md) and the [source boundary](docs/privacy-and-source-code.md).
+
+**[CivilDayCore](samples/CivilDayCore/)** is a second, entirely new Swift Package demonstrating captured time zones, Gregorian calendar-day arithmetic, 23/25-hour daylight-saving days, leap dates and year boundaries.
+
+```sh
+swift test --package-path samples/CivilDayCore
+```
+
+The calendar example is **not** extracted from GlassBox's private day-addressing or persistence code. It tests general Foundation date handling; read its [limitations](samples/CivilDayCore/README.md).
 
 ## How I develop
 

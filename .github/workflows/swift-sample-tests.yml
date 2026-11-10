@@ -4,12 +4,14 @@ on:
   pull_request:
     paths:
       - 'samples/HabitEvidenceCore/**'
+      - 'samples/CivilDayCore/**'
       - '.github/workflows/swift-sample-tests.yml'
   push:
     branches:
       - main
     paths:
       - 'samples/HabitEvidenceCore/**'
+      - 'samples/CivilDayCore/**'
       - '.github/workflows/swift-sample-tests.yml'
 
 permissions:
@@ -24,5 +26,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Swift toolchain
         run: swift --version
-      - name: Test standalone sample
+      - name: Test HabitEvidenceCore
         run: swift test --package-path samples/HabitEvidenceCore
+      - name: Test CivilDayCore
+        run: swift test --package-path samples/CivilDayCore
