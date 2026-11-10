@@ -36,7 +36,7 @@ jobs:
           forbidden='(^|/)[^/]+\.(xcodeproj|xcworkspace)(/|$)|\.(swift|pbxproj|xcconfig|entitlements|storekit|plist|xcscheme|xcworkspacedata|diff|patch)$'
           # Only these exact Swift demonstration paths are allowlisted.
           # Every other .swift / application artifact remains blocked.
-          if git ls-files | grep -Ei "$forbidden" | grep -Ev '^samples/HabitEvidenceCore/(Package\.swift|Sources/HabitEvidenceCore/EvidenceProjection\.swift|Tests/HabitEvidenceCoreTests/EvidenceProjectionTests\.swift)$'; then
+          if git ls-files | grep -Ei "$forbidden" | grep -Ev '^samples/(HabitEvidenceCore/(Package\.swift|Sources/HabitEvidenceCore/EvidenceProjection\.swift|Tests/HabitEvidenceCoreTests/EvidenceProjectionTests\.swift)|CivilDayCore/(Package\.swift|Sources/CivilDayCore/CivilDayStamp\.swift|Tests/CivilDayCoreTests/CivilDayStampTests\.swift))$'; then
             echo "Application implementation or patch artifact found in the public GlassBox case study." >&2
             exit 1
           fi
@@ -53,7 +53,10 @@ jobs:
             ':!.github/workflows/public-safety.yml' \
             ':!samples/HabitEvidenceCore/Package.swift' \
             ':!samples/HabitEvidenceCore/Sources/HabitEvidenceCore/EvidenceProjection.swift' \
-            ':!samples/HabitEvidenceCore/Tests/HabitEvidenceCoreTests/EvidenceProjectionTests.swift'; then
+            ':!samples/HabitEvidenceCore/Tests/HabitEvidenceCoreTests/EvidenceProjectionTests.swift' \
+            ':!samples/CivilDayCore/Package.swift' \
+            ':!samples/CivilDayCore/Sources/CivilDayCore/CivilDayStamp.swift' \
+            ':!samples/CivilDayCore/Tests/CivilDayCoreTests/CivilDayStampTests.swift'; then
             echo "Swift source-shaped excerpt found in public GlassBox material." >&2
             exit 1
           fi
@@ -65,7 +68,7 @@ jobs:
           # Sampled code is intentionally platform-independent and newly authored.
           # This check is a guardrail; a manual source provenance review is still required.
           patterns='^[[:space:]]*import[[:space:]]+(SwiftUI|SwiftData|CloudKit|StoreKit|HealthKit|AppKit|UIKit)([[:space:]]|$)'
-          if git grep -nE "$patterns" -- 'samples/HabitEvidenceCore/*.swift' 'samples/HabitEvidenceCore/**/*.swift'; then
+          if git grep -nE "$patterns" -- '*.swift'; then
             echo "Unexpected Apple implementation dependency in independent public sample." >&2
             exit 1
           fi

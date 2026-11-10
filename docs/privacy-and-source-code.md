@@ -26,9 +26,9 @@ The private repository is not a take-home sample, review package, or portfolio d
 
 ## Public illustrative Swift sample boundary
 
-This showcase may contain a specifically reviewed, **newly authored, standalone Swift example** in [`samples/HabitEvidenceCore/`](../samples/HabitEvidenceCore/). It demonstrates general programming concepts, not the actual GlassBox implementation, source excerpts, internal tests, models, identifiers or architecture. Its source and tests are original public demonstration material and are not a disclosure of the private repository.
+This showcase contains two separately authored Swift examples: [HabitEvidenceCore](../samples/HabitEvidenceCore/) and [CivilDayCore](../samples/CivilDayCore/). They demonstrate generic presentation logic and Foundation calendar handling, respectively, **not** the private GlassBox implementation, history-storage contracts, production tests, type names or source excerpts. Both are original public demonstration material.
 
-The CI file exception is restricted to an explicitly enumerated public sample. It is not blanket permission to copy app code, test fixtures or future modules into this showcase. Any further sample requires its own publication review.
+The CI file exception enumerates exact approved source paths for these two examples. It is not blanket permission to copy app code, test fixtures or future modules into this showcase. All further additions require separate human publication review. Any further sample requires its own publication review.
 
 ## Visual boundary
 
